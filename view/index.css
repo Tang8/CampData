@@ -1,0 +1,265 @@
+body{
+    background-color: rgba(226, 227, 223, 0.92);
+    overflow-x: hidden;
+}
+main{
+    text-align: center;
+}
+
+a:link{
+    text-decoration:none
+}
+
+#cat_link{
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(230, 211, 172, 0.58);
+    width: 16%
+}
+
+#cat_link:hover{
+    background: rgb(230, 211, 172);
+}
+
+#ul_bar{
+    background-color: white;
+    text-align: center;
+    padding: 1%;
+    top: 0;
+}
+
+#ul_bar li{
+    display: inline;
+}
+
+#ul_bar #li{
+    display: inline-block;
+    margin: 0 4%;
+    font-size: 16px;
+    font-family: PT sans;
+    font-weight: normal;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+}
+
+#menu_bar {
+box-shadow: 0 7px 10px -9px black;
+position: relative;
+right: 1%;
+width: 104%;
+}
+
+#title_menu{
+    color:black;
+}
+
+#title_dropdown{
+    color:black;
+    font-size: 14px;
+    font-family: PT sans;
+    font-weight: normal;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    
+}
+
+#barsearch{
+    background-color: rgba(226, 227, 223, 0.92);
+    padding: 0.4% 15px;
+}
+
+.recherche_p {
+    background-color: #eeeeee;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #dddddd;
+    padding: 10px 10px 10px 10px;
+}
+
+/* Champ de saisie */
+#searchthis #search {
+    background-color: #ffffff;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #dddddd;
+    padding: 20px 20px 15px 10px;
+    width: 78.5%;
+    box-sizing: border-box;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+/* Bouton valider */
+#searchthis #search-btn {
+    background-color: #E8B960;
+    border-style: solid;
+    border-width: 0px;
+    border-color: #E8B960;
+    padding: 15px 5px 12px 15px;
+    width: 15.5%;
+    box-sizing: border-box;
+    font-family: PT sans;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 4px;
+    margin: 5px 0px 5px 60px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+/* Bouton valider quand survolé par la souris */
+#searchthis #search-btn:hover {
+    background-color: #ffffff;   /* Couleur de fond */
+    color: #E8B960;   /* Couleur du texte */
+    cursor: pointer;   /* Apparence du curseur comme pour un lien */
+}
+
+#plateform_title{
+    font-family: PT sans;
+    font-size: 20px;
+    font-weight: normal;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+#container_display{
+    width: 90%;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+#container_stream{
+    width: 50px;
+}
+
+
+#logo {
+    width: 15%;
+}
+
+img {
+    cursor: pointer;
+}
+
+#headerlogo {
+    width: 100%;
+    text-align: center;
+}
+
+#mySidenav a {
+    position: absolute;
+    left: -145px;
+    transition: 0.3s;
+    padding: 16px;
+    width: 135px;
+    text-decoration: none;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    font-family: PT sans;
+    font-size: 13.5px;
+    font-weight: normal;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+#mySidenav a:hover {
+    left: 0;
+}
+
+#site {
+    top: 20px;
+    background-color: rgba(55, 143, 209, 0.78);
+}
+
+#about {
+    top: 75px;
+    background-color: rgba(55, 143, 209, 0.78);
+}
+
+.slide{
+    width: 49%;
+    height: 365px;
+}
+
+.plateform_title {
+    font-family: PT sans;
+    font-size: 15.5px;
+    font-weight: normal;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+#categorie{
+    display: inline-flex;
+    width: 100%;
+    padding-bottom: 1%;
+}
+
+.categorie_title {
+    margin-left: 8%;
+    margin-right: 8%;
+    font-family: PT sans;
+    font-size: 15px;
+    font-weight: normal;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: black;
+}
+
+html {
+    padding-bottom:20px;
+    position:relative;
+}
+
+body {
+    position:relative;
+    min-height:100%;
+}
+
+#toto{
+    width: 100%;
+    text-align: -webkit-center;
+    margin-left: 2%;
+}
+
+#footer {
+    text-align: -webkit-center;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: -15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#p_footer{
+    background-color: rgba(232, 185, 96, 0.41);
+    height: 20px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 242px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 212px;
+    box-shadow: 37px 22px 12px -3px rgba(0,0,0,0.2);
+    padding: 8px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+

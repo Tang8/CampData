@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+  <head>
+    <meta charset = "UTF-8">
+      <title>Hadopi Stream</title>
+      <link rel="stylesheet" type="text/css" href="view/index.css">
+      <link rel="stylesheet" type="text/css" href="view/view_movie.css">
+      <link rel="icon" type="image/png" href="photo_slide/dop.png">
+      </head>
+      
+  <body>
+    <div id="container">
+    <?php require 'header.php';?>
+    <br/>
+    <main>
+
+<div id="categorie">
+	<a href="film.php" id="cat_link"><p class="categorie_title">Tous</p></a>
+	<a href="film.php?Categorie=Action" id="cat_link"><p class="categorie_title">Action</p></a>
+	<a href="film.php?Categorie=Aventure" id="cat_link"><p class="categorie_title">Aventure</p></a>
+	<a href="film.php?Categorie=Western" id="cat_link"><p class="categorie_title">Western</p></a>
+	<a href="film.php?Categorie=Comique" id="cat_link"><p class="categorie_title">Comique</p></a>
+	<div>
+
+    </main>
+
+      <div id="toto">
+      <button class="image_view" id="previous"><</button>
+      <button class="image_view" id="next">></button>
+//<?php require_once ('Controller/Bundle/over_desk2.php'); ?>
+      <script>
+              document.getElementById("previous").onclick = function() {Pictures_Information('-')};
+              document.getElementById("next").onclick = function() {Pictures_Information('+')};
+      </script>
+<?php
+
+function Pictures_Information() {
+
+    echo "lol";
+    if ($m = new MongoClient()) {
+
+        $db = $m->selectDB('local');
+        $collection = new MongoCollection($db, 'local.Films');
+        $cursor = $collection->find();
+        $cursor->limit(18);
+        $cursor->sort(array('PublicationDate' => -1));
+
+        foreach ($cursor as $doc) {
+
+            $url = $doc['URLPhoto'];
+            $essais = get_headers($url, 1);
+
+            if (preg_match("#OK#i", $essais[0])) {
+                echo sprintf("<div class='full_image'>                                                                                                                                                                                                                      
+                  <img class='image' src='%s'>                                                                                                                                                                                                                                
+                  <div class='image_title'><p> %s%s</p></div>", $doc['URLPhoto'], $doc['Title'], PHP_EOL);
+                    echo sprintf('<div class="over_description">                                                                                                                                                                                                                
+                  <img class="over_image" src="%s">                                                                                                                                                                                                                           
+                  <div class="full_desc"><h2 class="desc_title">%s%s</h2>', $doc['URLPhoto'], $doc['Title'], PHP_EOL);
+                        echo sprintf('<p class="info_film"> <strong>Durée :</strong> %s minutes<br>                                                                                                                                                                                 
+                  <strong>Réalisateur :</strong> %s%s <br>', $doc['Duration'], $doc['director'], PHP_EOL);
+                        echo sprintf('<strong>Avec :</strong> %s<br>                                                                                                                                                                                                                
+                  <strong>Genre :</strong> %s%s <br>', $doc['casts'], $doc['categories'], PHP_EOL);
+                        echo sprintf('<strong>Plateforme :</strong><a href="https://%s"> %s </a> <br></p>', $doc['VODPlateforme'], $doc['VODPlateforme'], PHP_EOL);
+                        echo sprintf('<p class="description">%s</p></div><a href="%s%s"><button class="over_button" style="vertical-align:middle"><span>Voir</span></button></a>                                                                                                    
+                  </div>                                                                                                                                                                                                                                                      
+                  </div>', $doc['Plot'], $doc['URL'], PHP_EOL);
+            }
+            else {
+                echo sprintf("<div class='full_image'>                                                                                                                                                                                                                    
+                    <img class='image' src='".search_image($doc['Title'])."'>                                                                                                                                                                                                 
+                 <div class='image_title'><p>%s</p></div>", $doc['Title'], PHP_EOL);
+                    echo sprintf('<div class="over_description">                                                                                                                                                                                                          
+                    <img class="over_image" src="'.search_image($doc['Title']).'">                                                                                                                                                                                            
+                    <div class="full_desc"><h2 class="desc_title">%s</h2>', $doc['Title'], PHP_EOL);
+                        echo sprintf('<p class="info_film"> <strong>Durée :</strong> %s minutes<br>                                                                                                                                                                               
+                  <strong>Réalisateur :</strong> %s%s <br>', $doc['Duration'], $doc['director'], PHP_EOL);
+                        echo sprintf('<strong>Avec :</strong> %s<br>                                                                                                                                                                                                                
+                  <strong>Genre :</strong> %s%s <br>', $doc['casts'], $doc['categories'], PHP_EOL);
+                        echo sprintf('<strong>Plateforme :</strong><a href="https://%s"> %s </a> <br></p>', $doc['VODPlateforme'], $doc['VODPlateforme'], PHP_EOL);
+                        echo sprintf('<p class="description">%s</p></div><a href="%s%s"><button class="over_button" style="vertical-align:middle"><span>Voir</span></button></a>                                                                                                    
+                  </div>                                                                                                                                                                                                                                                      
+                  </div>', $doc['Plot'], $doc['URL'], PHP_EOL);
+
+            }
+        }
+    }
+    else {
+        echo "Disconnected \n";
+    }
+}
+
+?>
+      </div>
+    <div id="footer" class="plateform_title">
+      <p id="p_footer">Code Camp Prep'ETNA 2021</p>
+      </div> 
+</div>
+  </body>
+  
+</html>

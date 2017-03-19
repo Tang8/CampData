@@ -1,0 +1,144 @@
+#sous_titre {
+    font-family: PT sans;
+    font-size: 19px;
+    font-weight: normal;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+#Nos_films {
+    text-align: -webkit-center;
+    width: 80%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#film_image {
+    font-family: PT sans;
+    font-size: 15px;
+    font-weight: normal;
+    color: black;
+}
+
+.full_image {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    max-width: 230px;
+    height: 366px;
+    position: relative;
+    display: inline-block;
+}
+
+.image_title {
+    padding:15px;
+    text-transform: uppercase;
+}
+
+.image_title p {
+    height: 34px;
+    overflow: hidden;
+}
+
+.full_image .image {
+    width: 230px;
+    height: 290px;
+}
+
+.over_description {
+    display: none;
+    position: absolute;
+    background-color: #e4e5e1;;
+    min-width: 160px;
+    width: 624px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    min-height: 350px;
+    bottom: 32%;
+    left: -82%;
+    border-radius: 3%;
+}
+
+.full_image:hover .over_description {
+    display: block;
+}
+
+.over_image {
+    border: 1px solid #e4e5e1;
+    width: 252px;
+    position: relative;
+    float: left;
+    top: 10px;
+    left: 10px;
+    height: 330px;
+}
+
+.full_desc {
+    padding: 15px;
+    height: 250px;
+    text-overflow: ellipsis;
+    overflow: auto;
+}
+
+.desc_title {
+    text-transform: uppercase;
+}
+
+.info_film {
+    text-align: left;
+    margin-left: 25px;
+}
+
+.info_film a {
+    color:blue;
+}
+
+.over_button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #E8B960;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 5px;
+    width: 139px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 16px;
+}
+
+.description {
+    text-align: justify;
+    white-space: pre-wrap;
+}
+
+.over_button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.over_button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.over_button:hover span {
+    padding-right: 25px;
+}
+
+.over_button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+#res {
+    text-align : center;
+}
